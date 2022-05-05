@@ -1,24 +1,22 @@
 {
-  "name": "remix-template-vercel",
+  "name": "jwpjr.tech",
   "private": true,
   "description": "",
-  "license": "",
+  "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "build": "remix build && rollup -c",
-    "dev": "remix dev"
+    "build": "remix build",
+    "dev": "remix dev",
+    "postinstall": "remix setup node"
   },
   "dependencies": {
     "@primer/react": "^35.2.1",
     "@remix-run/node": "^1.4.3",
     "@remix-run/react": "^1.4.3",
     "@remix-run/vercel": "^1.4.3",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rollup": "^2.72.0",
+    "remix": "^1.4.3",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
