@@ -1,3 +1,4 @@
+import { BaseStyles, SSRProvider, ThemeProvider } from "@primer/react";
 import {
   Links,
   LiveReload,
@@ -15,17 +16,24 @@ export const meta = () => ({
 
 export default function App() {
   return (
-    <html lang="en">
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
+    <SSRProvider>
+      <html lang="en">
+            <head>
+              <Meta />
+              <Links />
+              {typeof document === "undefined" ? "__STYLES__" : null}
+            </head>
+            <body>
+            <ThemeProvider>
+          <BaseStyles>
+              <Outlet />
+              <ScrollRestoration />
+              <Scripts />
+              <LiveReload />
+              </BaseStyles>
+        </ThemeProvider>
+            </body>
+      </html>
+    </SSRProvider>
   );
 }

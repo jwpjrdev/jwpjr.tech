@@ -1,32 +1,22 @@
+import { Box, Heading, ActionMenu, ActionList } from "@primer/react";
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <Box m={4} borderColor="border.default" borderWidth={1} borderStyle="solid" p={3}>
+      <Heading sx={{mb: 2}}>Welcome to Remix (With Styled Component)</Heading>
+      <ActionMenu>
+        <ActionMenu.Button>Menu</ActionMenu.Button>
+
+        <ActionMenu.Overlay>
+          <ActionList>
+            <ActionList.Item onSelect={event => console.log('New file')}>New file</ActionList.Item>
+            <ActionList.Item>Copy link</ActionList.Item>
+            <ActionList.Item>Edit file</ActionList.Item>
+            <ActionList.Divider />
+            <ActionList.Item variant="danger">Delete file</ActionList.Item>
+          </ActionList>
+        </ActionMenu.Overlay>
+      </ActionMenu>
+    </Box>
   );
 }
